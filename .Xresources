@@ -1,0 +1,45 @@
+! special
+*.foreground:   #ffffff
+*.background:   #181818
+*.cursorColor:  #ffffff
+
+! black
+*.color0:       #2e2e2e
+*.color8:       #676767
+
+! red
+*.color1:       #664444
+*.color9:       #976a6a
+
+! green
+*.color2:       #2d8338
+*.color10:      #52a25c
+
+! yellow
+*.color3:       #885522
+*.color11:      #e1a44a
+
+! blue
+*.color4:       #224455
+*.color12:      #365869
+
+! magenta
+*.color5:       #332244
+*.color13:      #49395b
+
+! cyan
+*.color6:       #537282
+*.color14:      #768e9a
+
+! white
+*.color7:       #a4a4a4
+*.color15:      #ffffff
+
+URxvt.scrollBar: false
+
+
+URxvt*font:              xft:iosevka:Regular:size=9
+URxvt*imFont:            xft:iosevka:Regular:size=9
+URxvt*boldFont:          xft:iosevka:Regular:size=9
+URxvt*italicFont:        xft:iosevka:Regular:size=9
+URxvt*boldItalicFont:    xft:iosevka:Regular:size=9

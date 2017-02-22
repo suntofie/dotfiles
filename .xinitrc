@@ -1,0 +1,5 @@
+compton &
+exec dunst &
+exec xfce4-power-manager &
+exec conky -c dwmconky | while read -r; do xsetroot -name "$REPLY"; done &
+exec dwm
