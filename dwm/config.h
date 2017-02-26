@@ -2,13 +2,13 @@
 
 /* appearance */
 static const char *fonts[] = {
-	"iosevka:size=9"
+	"Hack:Regular:size=9"
 };
-static const char dmenufont[]       = "iosevka:size=10";
-static const char normbordercolor[] = "#dbbf9f";
+static const char dmenufont[]       = "Cousine:Regular:size=9";
+static const char normbordercolor[] = "#4E4E4E";
 static const char normbgcolor[]     = "#181818";
 static const char normfgcolor[]     = "#ffffff";
-static const char selbordercolor[]  = "#a4ee62";
+static const char selbordercolor[]  = "#ffffff";
 static const char selbgcolor[]      = "#ffffff";
 static const char selfgcolor[]      = "#181818";
 static const unsigned int borderpx  = 2;        /* border pixel of windows */
@@ -19,10 +19,10 @@ static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display 
 static const int showsystray        = 1;        /* 0 means no systray */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const unsigned int gappx = 0;            /* gap pixel between windows */
+static const unsigned int gappx = 4;            /* gap pixel between windows */
 
 /* tagging */
-static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+static const char *tags[] = { "dev", "web", "media", "other", "other1" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -30,8 +30,9 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
-	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
+	{ "Atom",        NULL,       NULL,       1 << 0,       0,           -1 },
+	{ "Steam",       NULL,       NULL,       1 << 2,       1,           -1 },
+	{ "Google-chrome",  NULL,       NULL,       1 << 1,       0,           -1 },
 };
 
 /* layout(s) */
@@ -62,8 +63,10 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
-static const char *termcmd[]  = { "termite", NULL };
+static const char *termcmd[]  = { "urxvt", NULL };
 static const char *rofirun[]  = { "rofi", "-show", "run", NULL };
+static const char *rofishow[]  = { "rofi", "-show", NULL };
+static const char *lock[] = { "lock", "-p", NULL};
 
 static const char *volup[] = { "amixer", "-q", "set", "Master", "2dB+", "unmute", NULL };
 static const char *voldw[] = { "amixer", "-q", "set", "Master", "2dB-", "unmute", NULL };
@@ -77,6 +80,7 @@ static Key keys[] = {
 	{ 0,                            0x1008ff12,   spawn,       {.v = volmt } },
 	{ 0,                            0x1008ff11,   spawn,       {.v = voldw } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
+    { MODKEY,                       XK_l,      spawn,          {.v = lock } },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
 	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
@@ -84,7 +88,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
 	{ MODKEY|ShiftMask,             XK_Return, zoom,           {0} },
-	{ MODKEY,                       XK_Tab,    view,           {0} },
+	{ MODKEY,                       XK_Tab,    spawn,          {.v = rofishow} },
 	{ MODKEY,                       XK_q,      killclient,     {0} },
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
