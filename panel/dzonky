@@ -1,0 +1,17 @@
+conky.config = {
+	background = false,
+	out_to_console = true,
+	out_to_x = false,
+	update_interval = 0.9,
+	total_run_times = 0,
+	use_spacer = 'none',
+
+};
+
+conky.text = [[
+${if_match "${exec skb 0,2}" == "Rus"}ru${else}en${endif} | \
+^i(/home/sunto/dzen/sm4tik/spkr_01.xbm) ^ca(1, voldz -d 3) - ^ca()${exec amixer get Master | awk -F'[]%[]' '/%/ {if ($7 == "off") { print "mute" } else { print $2"%" }}'}^ca(1, voldz -i 3) + ^ca() | \
+^i(/home/sunto/dzen/sm4tik/wifi_02.xbm)^ca(1, urxvt -e nmtui-connect) ${wireless_essid wlo1} ${wireless_link_qual_perc wlo1}%^ca() | \
+^i(/home/sunto/dzen/sm4tik/bat_full_01.xbm) ${battery_percent}% | \
+${time %a. %d %h. %H:%M:%S} 
+]];
