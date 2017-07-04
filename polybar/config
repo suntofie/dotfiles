@@ -1,0 +1,214 @@
+;=====================================================
+;
+;   To learn more about how to configure Polybar
+;   go to https://github.com/jaagr/polybar
+;
+;   The README contains alot of information
+;
+;=====================================================
+
+[colors]
+;background = ${xrdb:color0:#222}
+background = #18191D
+background-alt = #444
+;foreground = ${xrdb:color7:#222}
+foreground = #dfdfdf
+foreground-alt = #555
+primary = #ffb52a
+secondary = #e60053
+alert = #bd2c40
+der = #61bc3b
+
+[bar/top]
+monitor = ${env:MONITOR:LVDS}
+width = 100%
+height = 20
+;offset-x = 1%
+;offset-y = 1%
+radius = 0
+fixed-center = false
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 0
+line-color = #f00
+
+border-size = 0
+border-color = #00000000
+
+padding-left = 0
+padding-right = 0
+
+module-margin-left = 0
+module-margin-right = 0
+
+font-0 = Droid Sans Mono Dotted for Powerline:pixelsize=9;1
+font-1 = FontAwesome:pixelsize=9;0
+
+modules-left = i3
+modules-center =
+modules-right = xkeyboard volume memory network date
+
+tray-position = right
+tray-padding = 2
+;tray-transparent = true
+;tray-background = #0063ff
+
+;wm-restack = bspwm
+;wm-restack = i3
+
+;override-redirect = true
+
+;scroll-up = bspwm-desknext
+;scroll-down = bspwm-deskprev
+
+;scroll-up = i3wm-wsnext
+;scroll-down = i3wm-wsprev
+
+[module/memory]
+type = internal/memory
+
+; Seconds to sleep between updates
+; Default: 1
+interval = 3
+format = <label>
+label = " r:%mb_used% "
+format-background = #f5eb0a
+format-foreground = #222220
+
+[module/network]
+type = internal/network
+interface = wlo1
+
+format-connected = <label-connected>
+format-disconnected = <label-disconnected>
+
+label-connected = " w:%essid% %signal%% "
+label-connected-foreground = #eefafafa
+;format-connected-underline = ${colors.secondary}
+format-connected-background = ${colors.secondary}
+
+ramp-signal-0 = 😱 0
+ramp-signal-1 = 😠 1
+ramp-signal-2 = 😒 2
+ramp-signal-3 = 😊 3
+ramp-signal-4 = 😃 4
+ramp-signal-5 = 😈 5
+
+label-disconnected = not connected
+label-disconnected-foreground = #66ffffff
+
+[module/xkeyboard]
+type = internal/xkeyboard
+blacklist-0 = num lock
+
+format-prefix =
+format-prefix-foreground = ${colors.foreground-alt}
+format-prefix-underline = ${colors.secondary}
+
+label-layout = " %layout% "
+;label-layout-underline = ${colors.secondary}
+label-layout-background = ${colors.secondary}
+
+label-indicator-padding = 2
+label-indicator-margin = 1
+label-indicator-background = ${colors.secondary}
+label-indicator-underline = ${colors.secondary}
+
+[module/bspwm]
+type = internal/bspwm
+
+label-focused = %index%
+label-focused-background = ${colors.background-alt}
+label-focused-underline= ${colors.primary}
+label-focused-padding = 1
+
+label-occupied = %index%
+label-occupied-padding = 1
+
+label-urgent = %index%!
+label-urgent-background = ${colors.alert}
+label-urgent-padding = 1
+
+label-empty = %index%
+label-empty-foreground = ${colors.foreground-alt}
+label-empty-padding = 1
+
+[module/i3]
+type = internal/i3
+format = <label-state> <label-mode>
+index-sort = true
+wrapping-scroll = false
+
+; Only show workspaces on the same output as the bar
+;pin-workspaces = true
+
+label-mode-padding = 2
+label-mode-foreground = #000
+label-mode-background = ${colors.primary}
+
+; focused = Active workspace on focused monitor
+label-focused = %index%
+label-focused-background = ${module/bspwm.label-focused-background}
+label-focused-underline = ${module/bspwm.label-focused-underline}
+label-focused-padding = ${module/bspwm.label-focused-padding}
+
+; unfocused = Inactive workspace on any monitor
+label-unfocused = %index%
+label-unfocused-padding = ${module/bspwm.label-occupied-padding}
+
+; visible = Active workspace on unfocused monitor
+label-visible = %index%
+label-visible-background = ${self.label-focused-background}
+label-visible-underline = ${self.label-focused-underline}
+label-visible-padding = ${self.label-focused-padding}
+
+; urgent = Workspace with urgency hint set
+label-urgent = %index%
+label-urgent-background = ${module/bspwm.label-urgent-background}
+label-urgent-padding = ${module/bspwm.label-urgent-padding}
+
+[module/date]
+type = internal/date
+interval = 1
+
+date =
+date-alt = " %a %d/%m "
+
+time = "%H:%M "
+time-alt = "%H:%M:%S"
+
+format-prefix =
+format-prefix-foreground = ${colors.foreground-alt}
+;format-underline = #0a6cf5
+format-background = #0a6cf5
+label = %date% %time%
+
+[module/volume]
+type = internal/volume
+
+format-volume = <label-volume>
+format-volume-prefix= " v:"
+;label-volume = vol
+label-volume = "%percentage%% "
+label-volume-foreground = ${root.foreground}
+;format-volume-underline = ${colors.der}
+format-volume-background = ${colors.der}
+
+format-muted-prefix = " vol "
+format-muted-foreground = ${colors.foreground-alt}
+label-muted = off
+
+[settings]
+screenchange-reload = true
+;compositing-background = xor
+;compositing-background = screen
+;compositing-foreground = source
+;compositing-border = over
+
+[global/wm]
+margin-top = 5
+margin-bottom = 5
+
+; vim:ft=dosini
