@@ -7,14 +7,14 @@ allow_bold = true
 dynamic_title = true
 urgent_on_bell = true
 clickable_url = true
-font = Iosevka Term 10
+font = Droid Sans Mono Dotted for Powerline 8
 scrollback_lines = 10000
 search_wrap = true
 #icon_name = terminal
 #geometry = 640x480
 
 # "system", "on" or "off"
-cursor_blink = on
+cursor_blink = system
 
 # "block", "underline" or "ibeam"
 cursor_shape = underline
@@ -31,39 +31,51 @@ filter_unmatched_urls = true
 # emit escape sequences for extra modified keys
 #modify_other_keys = false
 
-[colors]
-cursor = #ffffff
-#cursor_foreground = #dcdccc
-foreground = #ffffff
-foreground_bold = #ffffff
-background = #181818
-
-# 20% background transparency (requires a compositor)
-#background = rgba(62, 62, 62, 0.95)
-
 # if unset, will reverse foreground and background
 highlight = #2f2f2f
 
-# colors from color0 to color254 can be set
-color0 =  #2e2e2e
-color1 =  #664444
-color2 =  #2d8338
-color3 =  #885522
-color4 =  #224455
-color5 =  #332244
-color6 =  #537282
-color7 =  #a4a4a4
-color8 =  #676767
-color9 =  #976a6a
-color10 = #52a25c
-color11 = #e1a44a
-color12 = #365869
-color13 = #49395b
-color14 = #768e9a
-color15 = #ffffff
+[colors]
+
+# special
+foreground      = #a2a2a2
+foreground_bold = #a2a2a2
+cursor          = #a2a2a2
+background      = #18191D
+
+# black
+color0  = #292A2E
+color8  = #888888
+
+# red
+color1  = #9c3528
+color9  = #ff5555
+
+# green
+color2  = #61bc3b
+color10 = #86df5d
+
+# yellow
+color3  = #f3b43a
+color11 = #fdd75a
+
+# blue
+color4  = #0d68a8
+color12 = #0f75bd
+
+# magenta
+color5  = #744560
+color13 = #9e5e83
+
+# cyan
+color6  = #288e9c
+color14 = #37c3d6
+
+# white
+color7  = #a2a2a2
+color15 = #f9f9f9
 
 [hints]
-#font = Monospace 12
+#font = iosevka-term
 #foreground = #dcdccc
 #background = #3f3f3f
 #active_foreground = #e68080

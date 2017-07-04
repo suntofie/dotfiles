@@ -1,5 +1,6 @@
-compton &
-exec dunst &
-exec xfce4-power-manager &
-exec conky -c dwmconky | while read -r; do xsetroot -name "$REPLY"; done &
-exec dwm
+exec compton --config ~/.config/compton.conf &
+exec xrdb merge ~/.Xresources &
+exec sh polybar.sh &
+exec sh ~/.fehbg &
+exec compton &
+exec i3
