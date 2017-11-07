@@ -1,0 +1,1 @@
+sudo pacman -S ttf-liberation ttf-dejavu opendesktop-fonts ttf-bitstream-vera ttf-arphic-ukai ttf-arphic-uming ttf-hanazono git wget curl zsh chromium pcmanfm atom lxappearance xorg-server xorg-xinit mesa-libgl xterm termite xf86-video-ati networkmanager 
