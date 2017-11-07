@@ -7,7 +7,7 @@ allow_bold = true
 dynamic_title = true
 urgent_on_bell = true
 clickable_url = true
-font = Droid Sans Mono Dotted for Powerline 8
+font = Hack Regular 9
 scrollback_lines = 10000
 search_wrap = true
 #icon_name = terminal
@@ -37,10 +37,10 @@ highlight = #2f2f2f
 [colors]
 
 # special
-foreground      = #a2a2a2
-foreground_bold = #a2a2a2
-cursor          = #a2a2a2
-background      = #18191D
+foreground      = #3AC2C6
+foreground_bold = #3AC2C6
+cursor          = #3AC2C6
+background      = #0C131E
 
 # black
 color0  = #292A2E
