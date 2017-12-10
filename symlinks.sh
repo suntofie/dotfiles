@@ -13,17 +13,17 @@ case "$item" in
         ;;
 esac
 echo "termite [1/6]" && sleep 1
-#ln -s ~/bin/dotfiles/termite ~/.config/termite
+ln -s ~/bin/dotfiles/termite ~/.config/termite
 echo "bspwm [2/6]" && sleep 1
-#ln -s ~/bin/dotfiles/bspwm ~/.config/bspwm
+ln -s ~/bin/dotfiles/bspwm ~/.config/bspwm
 echo "sxhkd [3/6]" && sleep 1
-#ln -s ~/bin/dotfiles/sxhkd ~/.config/sxhkd
+ln -s ~/bin/dotfiles/sxhkd ~/.config/sxhkd
 echo "polybar [4/6]" && sleep 1
-#ln -s ~/bin/dotfiles/polybar ~/.config/polybar
+ln -s ~/bin/dotfiles/polybar ~/.config/polybar
 echo "neovim [5/6]" && sleep 1
-#ln -s ~/bin/dotfiles/nvim ~/.config/nvim
+ln -s ~/bin/dotfiles/nvim ~/.config/nvim
 echo "sh [6/6]" && sleep 1
-#ln -s ~/bin/dotfiles/sh ~/bin/sh
+ln -s ~/bin/dotfiles/sh ~/bin/sh
 
 echo -n "Add sh scripts to bashrc? (Y/n) "
 

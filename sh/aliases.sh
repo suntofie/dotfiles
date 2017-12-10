@@ -16,6 +16,6 @@
   alias ..='cd ../..'
   alias ~='cd ~'
 
-  alias ls="els --els-icons=fontawesome"
+#  alias ls="els --els-icons=fontawesome"
 
   alias rebash="source ~/.bashrc"
